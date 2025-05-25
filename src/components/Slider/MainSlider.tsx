@@ -106,10 +106,20 @@ export default function MainSlider({
                     left: x,
                   }}
                   onClick={() => {
-                    if (currentIndex != index) {
+                    if (currentIndex !== index) {
                       setCurrentIndex(index)
                       changeNumberAnim(index)
                       callback(index)
+
+                      setAnimStarted(true);
+
+                      setTimeout(() => {
+                        setSlideTitle(data[index].title)
+                      }, 400)
+
+                      setTimeout(() => {
+                        setAnimStarted(false);
+                      }, 1000)
                     }
                   }}
                 >
