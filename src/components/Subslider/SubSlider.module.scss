@@ -24,7 +24,7 @@
   position: relative;
 
   &-change {
-    animation: changeSubSlider 1s 1;
+    animation: changeSubSlider 1s forwards;
   }
 }
 

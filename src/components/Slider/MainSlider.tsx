@@ -9,9 +9,10 @@ import styles from "./MainSlider.module.scss"
 export default function MainSlider({
   blockTitle,
   data,
-  radius = 265,
   callback,
 }: MainSliderProps) {
+  const radius = 265;
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimStart, setAnimStarted] = useState(false);
   const [slideTitle, setSlideTitle] = useState(data[currentIndex].title);
@@ -105,9 +106,11 @@ export default function MainSlider({
                     left: x,
                   }}
                   onClick={() => {
-                    setCurrentIndex(index)
-                    changeNumberAnim(index)
-                    callback(index)
+                    if (currentIndex != index) {
+                      setCurrentIndex(index)
+                      changeNumberAnim(index)
+                      callback(index)
+                    }
                   }}
                 >
                   <div
@@ -121,7 +124,7 @@ export default function MainSlider({
                   <div
                     className={
                       classNames(styles['element-title'], {
-                        [styles['element-title-active']]: currentIndex === index,
+                        [styles['element-title-active']]: data[index].title === slideTitle && index === currentIndex,
                       })
                     }
                     style={{
