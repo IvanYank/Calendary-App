@@ -2,6 +2,7 @@
   "name": "calendar-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://IvanYank.github.io/Calendary-App",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
@@ -14,10 +15,14 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-scripts": "5.0.1",
+    "sass": "^1.89.0",
+    "swiper": "^11.2.7",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -40,5 +45,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "classnames": "^2.5.1",
+    "gh-pages": "^6.3.0"
   }
 }
